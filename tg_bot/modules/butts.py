@@ -12,9 +12,11 @@ import requests
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
-from haruka import dispatcher
-from haruka.__main__ import STATS, USER_INFO
-from haruka.modules.disable import DisableAbleCommandHandler
+from tg_bot import dispatcher
+from tg_bot.__main__ import STATS, USER_INFO
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.helper_funcs.filters import CustomFilters
+
 
 def butts(bot: Bot, update: Update):
     nsfw = requests.get('http://api.obutts.ru/noise/1').json()[0]["preview"]
@@ -26,5 +28,7 @@ __help__ = """
  - /butts: Sends Random Butts pic.
 """
 __mod_name__ = "NSFW"
-BUTTS_HANDLER = DisableAbleCommandHandler("butts", butts, admin_ok=True)
+
+BUTTS_HANDLER = DisableAbleCommandHandler("butts", butts, filters=CustomFilters.sudo_filter)
 dispatcher.add_handler(BUTTS_HANDLER)
+
