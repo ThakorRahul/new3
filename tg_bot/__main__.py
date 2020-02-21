@@ -21,7 +21,7 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """Hello {}, my name is {}!
 I'm here to help you manage your groups!.I will Try My best to manage your groups.
 I'm a group manager bot maintained by this [awesome person](https://t.me/Okay_retard) .
-Want to add me to your group? [Click here!](t.me/Katherine_Langford_Bot?startgroup=true)
+Want to add me to your group? [Click here!](t.me/Kanna_Chan_Bot?startgroup=true)
 Thanks For Using Me 
  """
 
