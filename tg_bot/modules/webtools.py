@@ -96,11 +96,11 @@ def speedtst(bot: Bot, update: Update):
                    f"{result['client']['isp']}")
 
 IP_HANDLER = CommandHandler("ip", get_bot_ip, filters=Filters.chat(OWNER_ID))
-RTT_HANDLER = CommandHandler("ping", rtt, filters=CustomFilters.sudo_filter)
-PING_HANDLER = CommandHandler("cping", ping, filters=CustomFilters.sudo_filter)
+
+PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 SPEED_HANDLER = CommandHandler("speedtest", speedtst, filters=CustomFilters.sudo_filter) 
 
 dispatcher.add_handler(IP_HANDLER)
-dispatcher.add_handler(RTT_HANDLER)
+
 dispatcher.add_handler(SPEED_HANDLER)
 dispatcher.add_handler(PING_HANDLER)
