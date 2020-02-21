@@ -67,7 +67,8 @@ def rtt(bot: Bot, update: Update):
         update.effective_message.reply_text(" Round-trip time is <{}ms".format(ping_time))
     else:
         update.effective_message.reply_text(" Round-trip time: {}ms".format(ping_time))
-
+        
+@run_async
 def ping(bot: Bot, update: Update):
     message = update.effective_message
     parsing = extract_text(message).split(' ')
@@ -111,9 +112,9 @@ def ping(bot: Bot, update: Update):
         newstr=newstra[1].split(' ') #redundant split, but to try and not break windows ping
     ping_time = float(newstr[0])
     if os.name == 'nt' and under:
-        update.effective_message.reply_text(" Ping speed of " +dns+" is <{}ms".format(ping_time))
+        update.effective_message.reply_text(" 🏓Pong!  " +dns+" is <{}ms".format(ping_time))
     else:
-        update.effective_message.reply_text(" Ping speed of " +dns+": {}ms".format(ping_time))
+        update.effective_message.reply_text(" 🏓Pong!  " +dns+": {}ms".format(ping_time))
     
     
 
