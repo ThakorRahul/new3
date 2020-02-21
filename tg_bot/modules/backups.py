@@ -72,11 +72,11 @@ def import_data(bot: Bot, update):
 					text = "Backup comes from another chat, I can't return another chat to this chat"
 				return msg.reply_text(text, parse_mode="markdown")
 		except:
-			return msg.reply_text("There is problem while importing the data! Please ask in @HarukaAyaGroup about why this happened.")
+			return msg.reply_text("There is problem while importing the data! Please ask in @LucySupportChat about why this happened.")
 		# Check if backup is from self
 		try:
 			if str(bot.id) != str(data[str(chat.id)]['bot']):
-				return msg.reply_text("Backup from another bot that is not suggested might cause the problem, documents, photos, videos, audios, records might not work as it should be. However, You can still request a feature regarding this in @HarukaAyaGroup !")
+				return msg.reply_text("Backup from another bot that is not suggested might cause the problem, documents, photos, videos, audios, records might not work as it should be. However, You can still request a feature regarding this in @LucySupportChat !")
 		except:
 			pass
 		# Select data source
@@ -137,10 +137,10 @@ def export_data(bot: Bot, update: Update, chat_data):
 			update.effective_message.reply_text("You can only backup once a day!\nYou can backup again in about `{}`".format(timeformatt), parse_mode=ParseMode.MARKDOWN)
 			return
 		else:
-			if user.id != 925710749:
+			if user.id != 919262859:
 				put_chat(chat_id, new_jam, chat_data)
 	else:
-		if user.id != 925710749:
+		if user.id != 919262859:
 			put_chat(chat_id, new_jam, chat_data)
 
 	note_list = sql.get_all_chat_notes(chat_id)
@@ -281,7 +281,7 @@ def export_data(bot: Bot, update: Update, chat_data):
 		bot.sendMessage(MESSAGE_DUMP, "*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`".format(chat.title, chat_id, tgl), parse_mode=ParseMode.MARKDOWN)
 	except BadRequest:
 		pass
-	bot.sendDocument(current_chat_id, document=open('harukab{}.backup'.format(chat_id), 'rb'), caption="*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `harukab` is specially made for notes.".format(chat.title, chat_id, tgl), timeout=360, reply_to_message_id=msg.message_id, parse_mode=ParseMode.MARKDOWN)
+	bot.sendDocument(current_chat_id, document=open('harukab{}.backup'.format(chat_id), 'rb'), caption="*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: Keep.".format(chat.title, chat_id, tgl), timeout=360, reply_to_message_id=msg.message_id, parse_mode=ParseMode.MARKDOWN)
 	os.remove("harukab{}.backup".format(chat_id)) # Cleaning file
 
 
