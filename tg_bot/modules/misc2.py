@@ -549,7 +549,7 @@ __help__ = """
 __mod_name__ = "Misc"
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
-IP_HANDLER = CommandHandler("ip", get_bot_ip, filters=Filters.chat(SUDO_USERS + DEV_USERS))
+
 
 TIME_HANDLER = CommandHandler("time", get_time, pass_args=True)
 
@@ -564,7 +564,7 @@ MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.
 STATS_HANDLER = CommandHandler("stats", stats, filters=CustomFilters.sudo_filter | CustomFilters.dev_filter)
 
 dispatcher.add_handler(ID_HANDLER)
-dispatcher.add_handler(IP_HANDLER)
+
 dispatcher.add_handler(TIME_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
