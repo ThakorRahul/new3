@@ -20,18 +20,18 @@ from telegram import ParseMode, ReplyKeyboardRemove, ReplyKeyboardMarkup, Inline
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from haruka import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER
-from haruka.__main__ import GDPR
-from haruka.__main__ import STATS, USER_INFO
-from haruka.modules.disable import DisableAbleCommandHandler
-from haruka.modules.helper_funcs.extraction import extract_user
-from haruka.modules.helper_funcs.filters import CustomFilters
-from haruka.modules.rextester.api import Rextester, CompilerError
-from haruka.modules.rextester.langs import languages
+from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER
+from tg_bot.__main__ import GDPR
+from tg_bot.__main__ import STATS, USER_INFO
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.helper_funcs.extraction import extract_user
+from tg_bot.modules.helper_funcs.filters import CustomFilters
+from tg_bot.modules.rextester.api import Rextester, CompilerError
+from tg_bot.modules.rextester.langs import languages
 
-from haruka.modules.sql.translation import prev_locale
+from tg_bot.modules.sql.translation import prev_locale
 
-from haruka.modules.translations.strings import tld
+from tg_bot.modules.translations.strings import tld
 
 from requests import get
 
