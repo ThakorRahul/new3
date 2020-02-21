@@ -7,15 +7,15 @@ from telegram.ext import CommandHandler, Filters
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import mention_html
 
-import haruka.modules.sql.connection_sql as sql
-from haruka import dispatcher, LOGGER, SUDO_USERS
-from haruka.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_admin, can_restrict
-from haruka.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from haruka.modules.helper_funcs.string_handling import extract_time
+import tg_bot.modules.sql.connection_sql as sql
+from tg_bot import dispatcher, LOGGER, SUDO_USERS
+from tg_bot.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_admin, can_restrict
+from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from tg_bot.modules.helper_funcs.string_handling import extract_time
 
-from haruka.modules.translations.strings import tld
+from tg_bot.modules.translations.strings import tld
 
-from haruka.modules.keyboard import keyboard
+from tg_bot.modules.keyboard import keyboard
 
 
 @user_admin
