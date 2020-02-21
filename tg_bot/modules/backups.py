@@ -7,21 +7,21 @@ from telegram import Message, Chat, Update, Bot
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, Filters
 
-import haruka.modules.sql.notes_sql as sql
-from haruka import dispatcher, LOGGER, OWNER_ID, SUDO_USERS, MESSAGE_DUMP
-from haruka.__main__ import DATA_IMPORT
-from haruka.modules.helper_funcs.chat_status import user_admin
-from haruka.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from haruka.modules.helper_funcs.msg_types import get_note_type
-from haruka.modules.rules import get_rules
-import haruka.modules.sql.rules_sql as rulessql
-from haruka.modules.sql import warns_sql as warnssql
-import haruka.modules.sql.blacklist_sql as blacklistsql
-from haruka.modules.sql import disable_sql as disabledsql
-from haruka.modules.sql import cust_filters_sql as filtersql
-import haruka.modules.sql.welcome_sql as welcsql
-import haruka.modules.sql.locks_sql as locksql
-from haruka.modules.connection import connected
+import tg_bot.modules.sql.notes_sql as sql
+from tg_bot import dispatcher, LOGGER, OWNER_ID, SUDO_USERS, MESSAGE_DUMP
+from tg_bot.__main__ import DATA_IMPORT
+from tg_bot.modules.helper_funcs.chat_status import user_admin
+from tg_bot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from tg_bot.modules.helper_funcs.msg_types import get_note_type
+from tg_bot.modules.rules import get_rules
+import tg_bot.modules.sql.rules_sql as rulessql
+from tg_bot.modules.sql import warns_sql as warnssql
+import tg_bot.modules.sql.blacklist_sql as blacklistsql
+from tg_bot.modules.sql import disable_sql as disabledsql
+from tg_bot.modules.sql import cust_filters_sql as filtersql
+import tg_bot.modules.sql.welcome_sql as welcsql
+import tg_bot.modules.sql.locks_sql as locksql
+from tg_bot.modules.connection import connected
 
 @run_async
 @user_admin
