@@ -6,7 +6,7 @@ from telegram.error import TelegramError
 
 from tg_bot import dispatcher
 from tg_bot.modules.translations.strings import tld
-from tg_bot.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
+from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 
 import tg_bot.modules.sql.connection_sql as con_sql
 
