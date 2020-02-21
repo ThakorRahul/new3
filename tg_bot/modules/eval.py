@@ -8,6 +8,7 @@ from telegram.ext import Updater, CommandHandler
 from telegram.error import TimedOut, NetworkError
 from telegram import ParseMode
 
+from tg_bot.modules.helper_funcs.filters import CustomFilters
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from telegram.ext.dispatcher import run_async
 from tg_bot.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin
