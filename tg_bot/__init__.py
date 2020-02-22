@@ -57,7 +57,7 @@ if ENV:
     WORKERS = int(os.environ.get('WORKERS', 8))
     BAN_STICKER = os.environ.get('BAN_STICKER', 'CAADAgADOwADPPEcAXkko5EB3YGYAg')
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
-    GBAN_LOGS = os.environ.get('GBAN_LOGS', False)
+    
 else:
     from tg_bot.config import Development as Config
     TOKEN = Config.API_KEY
@@ -107,7 +107,7 @@ updater = tg.Updater(TOKEN, workers=WORKERS)
 
 dispatcher = updater.dispatcher
 
-GBAN_LOGS = Config.GBAN_LOGS
+
 
 SUDO_USERS = list(SUDO_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
