@@ -25,6 +25,7 @@ from tg_bot.__main__ import GDPR
 from tg_bot.__main__ import STATS, USER_INFO
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.extraction import extract_user
+from tg_bot.modules.helper_funcs.chat_status import user_is_gbanned
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 from tg_bot.modules.rextester.api import Rextester, CompilerError
 from tg_bot.modules.rextester.langs import languages
@@ -146,7 +147,7 @@ def get_id(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_text(tld(chat.id, "This group's id is `{}`.").format(chat.id),
                                                 parse_mode=ParseMode.MARKDOWN)
 
-
+@user_is_gbanned
 @run_async
 def info(bot: Bot, update: Update, args: List[str]):
     msg = update.effective_message  # type: Optional[Message]
