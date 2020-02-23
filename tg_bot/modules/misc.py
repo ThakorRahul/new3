@@ -161,7 +161,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     elif not msg.reply_to_message and (not args or (
             len(args) >= 1 and not args[0].startswith("@") and not args[0].isdigit() and not msg.parse_entities(
         [MessageEntity.TEXT_MENTION]))):
-        msg.reply_text("I can't extract a user from this.")
+        msg.reply_text("I can't extract a user from this :(")
         return
 
     else:
@@ -180,7 +180,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     text += "\nPermanent user link: {}".format(mention_html(user.id, "link"))
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person is my owner - I would never do anything against them!"
+        text += "\n\nThis person is my owner - So don't Mess with him!"
     else:
         if user.id in SUDO_USERS:
             text += "\nThis person is one of my sudo users! " \
